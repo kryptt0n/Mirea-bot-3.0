@@ -1,0 +1,13 @@
+        click_btns = self.driver.find_elements(By.TAG_NAME, "button")
+        for click_btn in click_btns:
+            if click_btn.get_property("className") == "btn btn_success btn_material":
+                click_btn.click()
+                print("Отметился")
+        time.sleep(2)
+        closebtn1 = self.driver.find_elements(By.TAG_NAME, "button")
+        class_for_close = "btn-link AttentionControlModal__cancel___bcfZW btn-link_success btn-link_upper btn-link_bold"
+        for close in closebtn1:
+            if close.get_property("className") == class_for_close:
+                close.click()
+                print("Закрыл отмечалку")
+        time.sleep(0.3)
